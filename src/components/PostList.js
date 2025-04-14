@@ -10,7 +10,7 @@ function PostList() {
   const fetchPosts = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`${process.env.REACT_APP_VM_IP_URL}/api/posts`);
+      const res = await axios.get(`${process.env.REACT_APP_MY_IP}/api/posts`);
       setPosts(res.data);
       setLoading(false);
     } catch (error) {
@@ -26,7 +26,7 @@ function PostList() {
     }
 
     try {
-      await axios.post(`${process.env.REACT_APP_VM_IP_URL}/api/posts`, { title, content });
+      await axios.post(`${process.env.REACT_APP_MY_IP}/api/posts`, { title, content });
       setTitle('');
       setContent('');
       fetchPosts();
